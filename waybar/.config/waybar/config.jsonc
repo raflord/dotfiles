@@ -1,21 +1,21 @@
 {
   "layer": "top",
   "position": "top",
-  "modules-left": ["custom/logo", "hyprland/window"],
-  "modules-center": ["hyprland/workspaces"],
+  "modules-left": ["custom/logo", "sway/window"],
+  "modules-center": ["sway/workspaces"],
   "modules-right": [
     "power-profiles-daemon",
     "memory",
     "temperature",
     "cpu",
-    "hyprland/language",
+    "sway/language",
     "tray",
     "pulseaudio#source",
     "clock",
   ],
   "reload_style_on_change": true,
 
-  "hyprland/window": {
+  "sway/window": {
     "format": "{title}",
     "icon": false,
     "max-length": 40,
@@ -23,23 +23,9 @@
     "tooltip": false,
   },
 
-  "hyprland/language": {
-    "format": "{}",
-    "format-en": "US",
-    "format-pt": "BR",
-    "on-click": "hyprctl switchxkblayout at-translated-set-2-keyboard next",
-    "tooltip": false,
-  },
-
-  "hyprland/workspaces": {
+  "sway/workspaces": {
     "format": "{icon}",
-    "tooltip": false,
-    "all-outputs": true,
-    "sort-by-number": true,
-    "disable-scroll": false,
-    "on-scroll-up": "hyprctl dispatch workspace +1",
-    "on-scroll-down": "hyprctl dispatch workspace -1",
-    "active-only": false,
+    "disable-scroll": true,
   },
 
   "custom/logo": {
