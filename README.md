@@ -1,4 +1,4 @@
-## Packages to install on new systems
+## Packages to install on fresh installs
 
 thunar + thunar-archive-plugin + xarchiver  
 vlc  
@@ -14,3 +14,4 @@ power-profiles-daemon + python-gobject
 fzf  
 ripgrep  
 unzip
+xclip
