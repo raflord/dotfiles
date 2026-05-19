@@ -13,5 +13,5 @@ swaync
 power-profiles-daemon + python-gobject  
 fzf  
 ripgrep  
-unzip
+unzip  
 xclip
