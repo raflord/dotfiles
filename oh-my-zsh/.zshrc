@@ -102,7 +102,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias pn=pnpm
-alias keyboard="sudo chown $USER:$USER /dev/hidraw1"
+alias keyboard="sudo chown $USER:$USER /dev/hidraw2"
 
 # Set line cursor when shell starts
 echo -ne "\e[6 q"
