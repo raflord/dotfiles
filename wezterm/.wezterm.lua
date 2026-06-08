@@ -30,7 +30,7 @@ config.colors = {
 -- Window configurations
 config.enable_tab_bar = false
 config.window_decorations = "NONE"
-config.window_background_opacity = 0.6
+config.window_background_opacity = 0.5
 config.window_padding = {
 	left = 0,
 	right = 0,
