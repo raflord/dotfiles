@@ -138,7 +138,7 @@ return {
 		vim.lsp.config("basedpyright", { capabilities = capabilities })
 		vim.lsp.config("ty", { capabilities = capabilities })
 		vim.lsp.config("superhtml", { capabilities = capabilities })
-		vim.lsp.config("prismals", { capabilities = capabilities })
+		vim.lsp.config("templ", { capabilities = capabilities })
 
 		vim.lsp.enable({
 			"lua_ls",
@@ -152,7 +152,7 @@ return {
 			"basedpyright",
 			"superhtml",
 			"biome",
-			"prismals",
+			"templ",
 		})
 	end,
 }

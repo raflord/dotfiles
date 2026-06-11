@@ -34,6 +34,7 @@ return {
 					["@punctuation.bracket"] = { fg = "#DA70D6" },
 					["@markup.link.label.html"] = { fg = "#EEFFFF" },
 					["@markup.heading"] = { fg = "#EEFFFF" },
+					["@string.special.templ"] = { fg = "#EEFFFF" },
 
 					-- rainbow-delimters colors
 					RainbowDelimiterYellow = { fg = "#FFD700" },
@@ -66,6 +67,7 @@ return {
 						["@markup.link.label.html"] = { fg = colors.fg, bold = false },
 						["@markup.link.label.tsx"] = { fg = colors.fg, bold = false },
 						["@markup.heading"] = { fg = colors.fg, bold = false },
+						["@string.special.templ"] = { fg = colors.fg, bold = false },
 					}
 
 					for group, styles in pairs(custom_highlights) do

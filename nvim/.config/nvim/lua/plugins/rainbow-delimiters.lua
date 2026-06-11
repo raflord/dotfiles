@@ -9,6 +9,7 @@ return {
 				tsx = "rainbow-parens",
 				typescript = "rainbow-parens",
 				html = "rainbow-parens",
+				templ = "rainbow-parens",
 			},
 			highlight = {
 				"RainbowDelimiterYellow",

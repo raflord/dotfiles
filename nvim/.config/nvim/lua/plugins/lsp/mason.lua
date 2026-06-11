@@ -45,6 +45,7 @@ return {
 				"ruff",
 				-- "ty",
 				"basedpyright",
+				"templ",
 			},
 		})
 		-- formatters
