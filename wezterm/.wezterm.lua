@@ -10,7 +10,7 @@ config.font_size = 17
 -- Colorscheme https://github.com/scottmckendry/cyberdream.nvim
 config.colors = {
 	foreground = "#ffffff",
-	background = "#16181a",
+	background = "#000000",
 
 	cursor_bg = "#ffffff",
 	cursor_fg = "#16181a",
@@ -30,7 +30,7 @@ config.colors = {
 -- Window configurations
 config.enable_tab_bar = false
 config.window_decorations = "NONE"
-config.window_background_opacity = 0.5
+config.window_background_opacity = 0.81
 config.window_padding = {
 	left = 0,
 	right = 0,
