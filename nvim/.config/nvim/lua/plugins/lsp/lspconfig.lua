@@ -139,6 +139,7 @@ return {
 		vim.lsp.config("ty", { capabilities = capabilities })
 		vim.lsp.config("superhtml", { capabilities = capabilities })
 		vim.lsp.config("templ", { capabilities = capabilities })
+		vim.lsp.config("taplo", { capabilities = capabilities })
 
 		vim.lsp.enable({
 			"lua_ls",
@@ -153,6 +154,7 @@ return {
 			"superhtml",
 			"biome",
 			"templ",
+			"taplo",
 		})
 	end,
 }
