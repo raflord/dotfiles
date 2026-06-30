@@ -21,11 +21,17 @@ bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 bind(mainMod .. " + SPACE", hl.dsp.exec_cmd(menu))
 bind(mainMod .. " + F", hl.dsp.window.fullscreen())
 
--- Move focus with mainMod + arrow keys
+-- Move focus with mainMod + hjkl
 bind(mainMod .. " + h", hl.dsp.focus({ direction = "left" }))
 bind(mainMod .. " + j", hl.dsp.focus({ direction = "down" }))
 bind(mainMod .. " + k", hl.dsp.focus({ direction = "up" }))
 bind(mainMod .. " + l", hl.dsp.focus({ direction = "right" }))
+
+-- Move window with mainMod + arrow keys
+bind(mainMod .. " + left", hl.dsp.window.move({ direction = "left" }))
+bind(mainMod .. " + down", hl.dsp.window.move({ direction = "down" }))
+bind(mainMod .. " + up", hl.dsp.window.move({ direction = "up" }))
+bind(mainMod .. " + right", hl.dsp.window.move({ direction = "right" }))
 
 -- Switch workspaces with mainMod + [0-9]
 -- Move active window to a workspace with mainMod + SHIFT + [0-9]
