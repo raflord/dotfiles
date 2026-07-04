@@ -5,7 +5,7 @@ local act = wezterm.action
 
 -- Font Config
 config.font = wezterm.font("JetBrainsMono Nerd Font")
-config.font_size = 17
+config.font_size = 15
 
 -- Colorscheme https://github.com/scottmckendry/cyberdream.nvim
 config.colors = {
@@ -36,6 +36,10 @@ config.window_padding = {
 	right = 0,
 	top = 0,
 	bottom = 0,
+}
+config.window_content_alignment = {
+	horizontal = "Center",
+	vertical = "Center",
 }
 
 -- Keybind config
