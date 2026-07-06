@@ -27,6 +27,13 @@ return {
 					},
 					opts = { skip = true },
 				},
+				{
+					filter = {
+						event = "notify",
+						find = "No code actions available",
+					},
+					opts = { skip = true },
+				},
 			},
 			lsp = {
 				-- override markdown rendering so that **cmp** and other plugins use **Treesitter**
