@@ -88,16 +88,17 @@ return {
 			underline = true, -- Specify Underline diagnostics
 			update_in_insert = false, -- Keep diagnostics active in insert mode
 		})
-		-- Setup servers
-		local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-		-- Config lsp servers
+		-- Toggle Inlay Hints
 		vim.keymap.set("n", "<leader>i", function()
 			vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
 		end, { desc = "Toggle Inlay Hints" })
 
+		-- LSP configs
+		local capabilities = require("cmp_nvim_lsp").default_capabilities()
+		vim.lsp.config("*", { capabilities = capabilities })
+
 		vim.lsp.config("lua_ls", {
-			capabilities = capabilities,
 			settings = {
 				Lua = {
 					diagnostics = {
@@ -114,7 +115,6 @@ return {
 		})
 
 		vim.lsp.config("ts_ls", {
-			capabilities = capabilities,
 			single_file_support = false,
 			init_options = {
 				preferences = {
@@ -125,7 +125,6 @@ return {
 		})
 
 		vim.lsp.config("gopls", {
-			capabilities = capabilities,
 			settings = {
 				gopls = {
 					completeUnimported = true,
@@ -136,16 +135,6 @@ return {
 				},
 			},
 		})
-
-		vim.lsp.config("html", { capabilities = capabilities })
-		vim.lsp.config("cssls", { capabilities = capabilities })
-		vim.lsp.config("tailwindcss", { capabilities = capabilities })
-		vim.lsp.config("ruff", { capabilities = capabilities })
-		vim.lsp.config("basedpyright", { capabilities = capabilities })
-		vim.lsp.config("ty", { capabilities = capabilities })
-		vim.lsp.config("superhtml", { capabilities = capabilities })
-		vim.lsp.config("templ", { capabilities = capabilities })
-		vim.lsp.config("taplo", { capabilities = capabilities })
 
 		vim.lsp.enable({
 			"lua_ls",
