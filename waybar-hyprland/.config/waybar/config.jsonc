@@ -37,8 +37,6 @@
     "all-outputs": true,
     "sort-by-number": true,
     "disable-scroll": false,
-    "on-scroll-up": "hyprctl dispatch workspace +1",
-    "on-scroll-down": "hyprctl dispatch workspace -1",
     "active-only": false,
   },
 
