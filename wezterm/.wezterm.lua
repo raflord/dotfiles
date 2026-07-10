@@ -5,12 +5,11 @@ local act = wezterm.action
 
 -- Font Config
 config.font = wezterm.font("JetBrainsMono Nerd Font")
-config.font_size = 15
+config.font_size = 17
 
 -- Colorscheme https://github.com/scottmckendry/cyberdream.nvim
 config.colors = {
 	foreground = "#ffffff",
-	background = "#000000",
 
 	cursor_bg = "#ffffff",
 	cursor_fg = "#16181a",
