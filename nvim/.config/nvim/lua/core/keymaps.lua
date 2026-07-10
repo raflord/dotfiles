@@ -32,6 +32,9 @@ vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 -- Format without prettier using the built in
 vim.keymap.set("n", "<leader>f", vim.lsp.buf.format, { desc = "Format file" })
 
+-- Restart neovim
+vim.keymap.set("n", "<leader>rr", "<cmd>restart<cr>", { desc = "Restart Neovim (:restart)" })
+
 -- Hightlight yanking
 vim.api.nvim_create_autocmd("TextYankPost", {
 	desc = "Highlight when yanking (copying) text",
