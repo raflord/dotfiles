@@ -10,6 +10,7 @@ config.font_size = 15
 -- Colorscheme https://github.com/scottmckendry/cyberdream.nvim
 config.colors = {
 	foreground = "#ffffff",
+	background = "#000000",
 
 	cursor_bg = "#ffffff",
 	cursor_fg = "#16181a",
