@@ -7,7 +7,6 @@ return {
 		"hrsh7th/cmp-path",
 		{
 			"L3MON4D3/LuaSnip",
-			version = "v2.*",
 			build = "make install_jsregexp",
 		},
 		"saadparwaiz1/cmp_luasnip",
@@ -21,6 +20,7 @@ return {
 		local luasnip = require("luasnip")
 		local lspkind = require("lspkind")
 		local colorizer = require("tailwindcss-colorizer-cmp").formatter
+		vim.api.nvim_set_hl(0, "CmpBorder", { fg = "#22272D", bg = "NONE" })
 
 		local lsp_kinds = {
 			Class = " ",
@@ -61,8 +61,11 @@ return {
 				completeopt = "menu,menuone,preview,noselect",
 			},
 			window = {
+				completion = {
+					border = "rounded",
+					winhighlight = "Normal:Pmenu,FloatBorder:CmpBorder,Search:None",
+				},
 				documentation = cmp.config.window.bordered(),
-				completion = cmp.config.window.bordered(),
 			},
 			-- config nvim cmp to work with snippet engine
 			snippet = {
@@ -85,7 +88,6 @@ return {
 				["<C-d>"] = cmp.mapping(function()
 					cmp.close_docs()
 				end, { "i", "s" }),
-
 				["<C-f>"] = cmp.mapping.scroll_docs(4),
 				["<C-b>"] = cmp.mapping.scroll_docs(-4),
 				["<C-j>"] = cmp.mapping.select_next_item(),
