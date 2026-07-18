@@ -6,7 +6,30 @@ theme = cyberdream
 
 background-opacity = 0.8
 
+window-padding-balance = true
+
 mouse-hide-while-typing = true
 window-save-state = always
 gtk-tabs-location = hidden
 
+keybind = unconsumed:ctrl+r=reload_config
+
+keybind = ctrl+arrow_up=scroll_page_up
+keybind = ctrl+arrow_down=scroll_page_down
+
+keybind = ctrl+space>t=new_tab
+keybind = ctrl+space>p=previous_tab
+keybind = ctrl+space>n=next_tab
+keybind = ctrl+space>l=last_tab
+keybind = ctrl+space>x=close_tab
+keybind = ctrl+space>s=new_split
+
+keybind = ctrl+space>1=goto_tab:1
+keybind = ctrl+space>2=goto_tab:2
+keybind = ctrl+space>3=goto_tab:3
+keybind = ctrl+space>4=goto_tab:4
+keybind = ctrl+space>5=goto_tab:5
+keybind = ctrl+space>6=goto_tab:6
+keybind = ctrl+space>7=goto_tab:7
+keybind = ctrl+space>8=goto_tab:8
+keybind = ctrl+space>9=goto_tab:9
