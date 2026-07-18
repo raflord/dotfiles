@@ -42,9 +42,14 @@ config.window_content_alignment = {
 	vertical = "Center",
 }
 
+-- How many lines of scrollback you want to retain per tab
+config.scrollback_lines = 10000
+
 -- Keybind config
 config.keys = {}
 config.leader = { key = "Space", mods = "CTRL", timeout_milliseconds = 1000 }
+table.insert(config.keys, { key = "UpArrow", mods = "CTRL", action = act.ScrollByPage(-1) })
+table.insert(config.keys, { key = "DownArrow", mods = "CTRL", action = act.ScrollByPage(1) })
 table.insert(config.keys, { key = "t", mods = "LEADER", action = act.SpawnTab("CurrentPaneDomain") })
 table.insert(config.keys, { key = "p", mods = "LEADER", action = act.ActivateTabRelative(-1) })
 table.insert(config.keys, { key = "n", mods = "LEADER", action = act.ActivateTabRelative(1) })
