@@ -1,4 +1,4 @@
-local terminal = "wezterm"
+local terminal = "ghostty"
 local fileManager = "thunar"
 local menu = "wofi --show drun"
 
