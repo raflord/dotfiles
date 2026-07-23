@@ -135,4 +135,6 @@ case ":$PATH:" in
 esac
 # pnpm end
 
+eval "$(zoxide init zsh)"
+
 . "$HOME/.local/bin/env"
