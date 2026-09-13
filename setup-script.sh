@@ -13,6 +13,7 @@ PACMAN_PACKAGES=(
     firefox
     fzf
     ghostty
+    gitui
     gnome-calculator
     gnome-disk-utility
     go
