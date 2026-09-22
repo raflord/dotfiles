@@ -72,6 +72,13 @@ return {
 						},
 					},
 				},
+				sources = {
+					explorer = {
+						hidden = true,
+						focus = "list",
+						auto_close = true,
+					},
+				},
 			},
 		})
 
@@ -81,7 +88,7 @@ return {
 		end
 
 		-- Open File Explorer
-		keymap("<leader>e", function()
+		keymap("-", function()
 			Snacks.explorer.reveal()
 		end, "Open File Explorer")
 
