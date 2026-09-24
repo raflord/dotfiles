@@ -234,20 +234,7 @@ install_cli_tools() {
 remove_unwanted_packages() {
     log "Removing unwanted packages..."
 
-    local installed=()
-    local package
-
-    for package in "${REMOVE_PACKAGES[@]}"; do
-        if pacman -Q -- "$package" >/dev/null 2>&1; then
-            installed+=("$package")
-        fi
-    done
-
-    if ((${#installed[@]} > 0)); then
-        sudo pacman -Rns --noconfirm -- "${installed[@]}"
-    else
-        log "No unwanted packages are installed."
-    fi
+    sudo pacman -Rns --noconfirm "${REMOVE_PACKAGES[@]}"
 }
 
 install_stow_configs() {
@@ -285,7 +272,7 @@ main() {
     sudo -v
 
     install_pacman_packages
-    pacman -S --needed "${PACMAN_PACKAGES[@]}"
+    sudo pacman -S --needed "${PACMAN_PACKAGES[@]}"
 
     install_stow_configs
 
