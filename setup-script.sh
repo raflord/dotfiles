@@ -8,6 +8,7 @@ readonly DOTFILES_DIR="${DOTFILES_DIR:-$HOME/dotfiles}"
 
 PACMAN_PACKAGES=(
     7zip
+    adw-gtk-theme
     discord
     fd
     firefox
@@ -32,6 +33,7 @@ PACMAN_PACKAGES=(
     python-gobject
     ripgrep
     spotify-launcher
+    startship
     swaync
     thunar
     thunar-archive-plugin
@@ -39,16 +41,20 @@ PACMAN_PACKAGES=(
     ttf-jetbrains-mono
     ttf-jetbrains-mono-nerd
     unzip
+    waybar
     wiremix
     wl-clipboard
     xarchiver
     xdg-desktop-portal-gtk
     zig
+    zoxide
 )
 
 REMOVE_PACKAGES=(
     dolphin
+    htop
     kitty
+    nano
 )
 
 STOW_PACKAGES=(
@@ -108,10 +114,7 @@ install_pacman_packages() {
     done
 
     if ((${#available[@]} > 0)); then
-        sudo pacman -Syu
-        --needed
-        --noconfirm
-        -- "${available[@]}"
+        sudo pacman -Syu --needed --noconfirm -- "${available[@]}"
     fi
 
     if ((${#unavailable[@]} > 0)); then
@@ -184,12 +187,7 @@ install_uv() {
 
     log "Installing uv..."
 
-    curl
-    --proto '=https'
-    --tlsv1.2
-    -LsSf
-    https://astral.sh/uv/install.sh |
-        sh
+    curl --proto '=https' --tlsv1.2 -LsSf https://astral.sh/uv/install.sh | sh
 }
 
 install_pnpm() {
@@ -200,12 +198,7 @@ install_pnpm() {
 
     log "Installing pnpm..."
 
-    curl
-    --proto '=https'
-    --tlsv1.2
-    -fsSL
-    https://get.pnpm.io/install.sh |
-        sh -
+    curl --proto '=https' --tlsv1.2 -fsSL https://get.pnpm.io/install.sh | sh -
 }
 
 install_oh_my_zsh() {
@@ -223,13 +216,7 @@ install_oh_my_zsh() {
     RUNZSH=no
     CHSH=no
     KEEP_ZSHRC=yes
-    sh -c "$(
-        curl
-        --proto '=https'
-        --tlsv1.2
-        -fsSL
-        https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
-    )"
+    sh -c "$(curl --proto '=https' --tlsv1.2 -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 }
 
 install_cli_tools() {
@@ -257,9 +244,7 @@ remove_unwanted_packages() {
     done
 
     if ((${#installed[@]} > 0)); then
-        sudo pacman -Rns
-        --noconfirm
-        -- "${installed[@]}"
+        sudo pacman -Rns --noconfirm -- "${installed[@]}"
     else
         log "No unwanted packages are installed."
     fi
@@ -300,7 +285,7 @@ main() {
     sudo -v
 
     install_pacman_packages
-    "${PACMAN_PACKAGES[@]}"
+    pacman -S --needed "${PACMAN_PACKAGES[@]}"
 
     install_stow_configs
 
