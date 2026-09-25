@@ -40,6 +40,9 @@ return {
 					return filtered
 				end,
 			},
+			lsp_progress = {
+				enable = false,
+			},
 		})
 	end,
 }

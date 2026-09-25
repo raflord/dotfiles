@@ -53,6 +53,7 @@ return {
 						cond = lazy_status.has_updates,
 						color = { fg = "#ff9e64" },
 					},
+					{ "lsp_status" },
 					{ "filetype" },
 				},
 			},
