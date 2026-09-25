@@ -51,6 +51,9 @@ return {
 				opts.desc = "Show buffer diagnostics"
 				vim.keymap.set("n", "<leader>D", picker.diagnostics_buffer, opts)
 
+				opts.desc = "open buffer diagnostics in loclist"
+				vim.keymap.set("n", "<leader>bd", vim.diagnostic.setloclist, opts)
+
 				opts.desc = "Show line diagnostics"
 				vim.keymap.set("n", "<leader>ld", vim.diagnostic.open_float, opts) -- show diagnostics for line
 
