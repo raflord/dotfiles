@@ -56,3 +56,5 @@ source <(fzf --zsh)
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+. "$HOME/.local/share/../bin/env"
