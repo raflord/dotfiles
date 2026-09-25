@@ -33,7 +33,7 @@ PACMAN_PACKAGES=(
     python-gobject
     ripgrep
     spotify-launcher
-    startship
+    starship
     swaync
     thunar
     thunar-archive-plugin
@@ -62,6 +62,7 @@ STOW_PACKAGES=(
     ghostty
     hypr
     nvim
+    starship
     waybar
     wofi
     zsh
@@ -240,7 +241,7 @@ remove_unwanted_packages() {
 install_stow_configs() {
     log "Stowing dotfiles..."
 
-    sudo rm -rs ~/.config/hypr
+    sudo rm -rf ~/.config/hypr
 
     if ! command -v stow >/dev/null 2>&1; then
         log "Installing GNU Stow..."
