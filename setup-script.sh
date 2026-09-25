@@ -9,7 +9,6 @@ readonly DOTFILES_DIR="${DOTFILES_DIR:-$HOME/dotfiles}"
 PACMAN_PACKAGES=(
     7zip
     adw-gtk-theme
-    discord
     fd
     firefox
     fzf
@@ -235,7 +234,20 @@ install_cli_tools() {
 remove_unwanted_packages() {
     log "Removing unwanted packages..."
 
-    sudo pacman -Rns --noconfirm "${REMOVE_PACKAGES[@]}"
+    local installed=()
+    local package
+
+    for package in "${REMOVE_PACKAGES[@]}"; do
+        if pacman -Q -- "$package" >/dev/null 2>&1; then
+            installed+=("$package")
+        fi
+    done
+
+    if ((${#installed[@]} > 0)); then
+        sudo pacman -Rns --noconfirm -- "${installed[@]}"
+    else
+        log "No unwanted packages are installed."
+    fi
 }
 
 install_stow_configs() {
@@ -268,6 +280,16 @@ install_stow_configs() {
     done
 }
 
+install_font() {
+    log "Installing font..."
+
+    sudo mkdir -p /usr/local/share/fonts/Metropolis
+
+    sudo unzip ./metropolis.zip -d /usr/local/share/fonts/Metropolis/
+
+    sudo rm /usr/local/share/fonts/Metropolis/SIL\ Open\ Font\ License.txt
+}
+
 main() {
     require_command pacman
     require_command sudo
@@ -281,6 +303,8 @@ main() {
 
     install_cli_tools
     remove_unwanted_packages
+
+    install_font
 
     log "Setup completed."
     log "Open a new shell to load uv, pnpm, and Oh My Zsh."
