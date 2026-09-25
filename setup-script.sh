@@ -59,6 +59,7 @@ REMOVE_PACKAGES=(
 STOW_PACKAGES=(
     backgrounds
     ghostty
+    gitui
     hypr
     nvim
     starship
