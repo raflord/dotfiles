@@ -11,6 +11,7 @@ PACMAN_PACKAGES=(
     adw-gtk-theme
     fd
     firefox
+    fuse2
     fzf
     ghostty
     gitui
