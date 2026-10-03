@@ -15,6 +15,9 @@ vim.keymap.set("n", "N", "Nzzzv")
 vim.keymap.set("v", "<", "<gv", opts)
 vim.keymap.set("v", ">", ">gv", opts)
 
+-- Disable commands history since I miss click it too much when trying to do ':q'
+vim.keymap.set("n", "q:", "<nop>")
+
 -- Clear last highlighted word
 vim.keymap.set("n", "<leader>h", function()
 	vim.cmd("noh")
@@ -41,5 +44,22 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 	group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
 	callback = function()
 		vim.hl.on_yank()
+	end,
+})
+
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "qf",
+	callback = function(ev)
+		vim.keymap.set("n", "q", "<cmd>close<CR>", {
+			buffer = ev.buf,
+			silent = true,
+			desc = "Close quickfix/location list",
+		})
+
+		vim.keymap.set("n", "<Esc>", "<cmd>close<CR>", {
+			buffer = ev.buf,
+			silent = true,
+			desc = "Close quickfix/location list",
+		})
 	end,
 })

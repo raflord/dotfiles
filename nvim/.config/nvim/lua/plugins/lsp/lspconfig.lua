@@ -25,9 +25,7 @@ return {
 				-- keymaps
 				opts.desc = "Show LSP references"
 				vim.keymap.set("n", "gR", function() -- show definition, references
-					picker.lsp_references({
-						include_current = true,
-					})
+					picker.lsp_references()
 				end, opts)
 
 				opts.desc = "Go to declaration"
