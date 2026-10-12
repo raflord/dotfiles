@@ -1,0 +1,164 @@
+# ============================================================
+# VARIABLES
+# ============================================================
+
+set $mod Mod1
+set $terminal ghostty
+set $fileManager thunar
+set $menu wofi --show drun
+
+# ============================================================
+# MONITORS
+# ============================================================
+
+output DP-1 mode 2560x1440@170Hz pos 0 0 scale 1
+output HDMI-A-1 mode 1920x1080@60Hz pos 2560 0 scale 1
+
+# ============================================================
+# AUTOSTART
+# ============================================================
+
+# Desktop utilities
+exec waybar
+exec swaync
+exec swayidle -w -C ~/.config/swayidle/config
+exec swaybg -i ~/.config/backgrounds/dark-desert.jpg -m fill
+
+# Environment variables
+set $XCURSOR_SIZE 24
+
+# ============================================================
+# ENVIRONMENT
+# ============================================================
+
+# Set these before launching Sway if your login manager
+# does not already set the appropriate session variables.
+# Environment variables may also be configured in your
+# shell or display manager.
+
+# ============================================================
+# LOOK AND FEEL
+# ============================================================
+
+# No gaps and no borders
+gaps inner 0
+gaps outer 0
+default_border pixel 2
+default_floating_border pixel 2
+hide_edge_borders smart
+
+# Tiling layout
+default_orientation auto
+workspace_layout default
+
+# ============================================================
+# INPUT
+# ============================================================
+
+input type:keyboard {
+    xkb_layout "us,br"
+    xkb_options "grp:win_space_toggle"
+    repeat_delay 300
+    repeat_rate 50
+}
+
+input type:pointer {
+    accel_profile flat
+    pointer_accel 0
+}
+
+input type:touchpad {
+    natural_scroll disabled
+}
+
+# ============================================================
+# KEYBINDINGS
+# ============================================================
+
+# Applications
+bindsym $mod+Return exec $terminal
+bindsym $mod+q kill
+bindsym $mod+e exec $fileManager
+bindsym $mod+space exec $menu
+
+# Floating, fullscreen and exit
+bindsym $mod+v floating toggle
+bindsym $mod+f fullscreen toggle
+bindsym $mod+Shift+m exec sh -c 'swaynag -t warning -m "Exit Sway?" -B "Exit" "swaymsg exit"'
+
+# Screenshots
+bindsym Print exec grim -g "$(slurp)" ~/Screenshots/$(date +'%Y%m%d-%H%M%S').png
+bindsym Mod4+Shift+s exec grim -g "$(slurp)" ~/Screenshots/$(date +'%Y%m%d-%H%M%S').png
+
+# Focus using Alt + hjkl
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# Move windows using Alt + arrow keys
+bindsym $mod+Left move left
+bindsym $mod+Down move down
+bindsym $mod+Up move up
+bindsym $mod+Right move right
+
+# Switch workspaces using Alt + 1-0
+bindsym $mod+1 workspace number 1
+bindsym $mod+2 workspace number 2
+bindsym $mod+3 workspace number 3
+bindsym $mod+4 workspace number 4
+bindsym $mod+5 workspace number 5
+bindsym $mod+6 workspace number 6
+bindsym $mod+7 workspace number 7
+bindsym $mod+8 workspace number 8
+bindsym $mod+9 workspace number 9
+bindsym $mod+0 workspace number 10
+
+# Move windows to workspaces using Alt + Shift + 1-0
+bindsym $mod+Shift+1 move container to workspace number 1
+bindsym $mod+Shift+2 move container to workspace number 2
+bindsym $mod+Shift+3 move container to workspace number 3
+bindsym $mod+Shift+4 move container to workspace number 4
+bindsym $mod+Shift+5 move container to workspace number 5
+bindsym $mod+Shift+6 move container to workspace number 6
+bindsym $mod+Shift+7 move container to workspace number 7
+bindsym $mod+Shift+8 move container to workspace number 8
+bindsym $mod+Shift+9 move container to workspace number 9
+bindsym $mod+Shift+0 move container to workspace number 10
+
+# Mouse drag/resize
+floating_modifier $mod normal
+
+# Multimedia keys
+bindsym --locked --no-repeat XF86AudioRaiseVolume exec wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 1%+
+bindsym --locked --no-repeat XF86AudioLowerVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%-
+bindsym --locked XF86AudioMute exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+bindsym --locked XF86AudioMicMute exec wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
+
+# Media player
+bindsym --locked XF86AudioNext exec playerctl next
+bindsym --locked XF86AudioPause exec playerctl play-pause
+bindsym --locked XF86AudioPlay exec playerctl play-pause
+bindsym --locked XF86AudioPrev exec playerctl previous
+
+# ============================================================
+# WORKSPACES AND OUTPUT ASSIGNMENTS
+# ============================================================
+
+workspace number 1 output DP-1
+workspace number 2 output DP-1
+workspace number 3 output DP-1
+workspace number 4 output DP-1
+workspace number 5 output DP-1
+workspace number 6 output DP-1
+workspace number 7 output DP-1
+workspace number 8 output DP-1
+workspace number 9 output HDMI-A-1
+workspace number 10 output HDMI-A-1
+
+# ============================================================
+# WINDOW RULES
+# ============================================================
+
+# Calculator floating window
+for_window [class="org.gnome.Calculator" title="Calculator"] floating enable
