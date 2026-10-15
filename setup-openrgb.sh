@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-APPIMAGE="~/Downloads/OpenRGB.AppImage"
+APPIMAGE="./OpenRGB.AppImage"
 RULES="/etc/udev/rules.d/60-openrgb.rules"
 
 if [[ ! -f "$APPIMAGE" ]]; then
