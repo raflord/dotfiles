@@ -23,6 +23,7 @@ exec waybar
 exec swaync
 exec swayidle -w -C ~/.config/swayidle/config
 exec swaybg -i ~/.config/backgrounds/dark-desert.jpg -m fill
+exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
 
 # Environment variables
 set $XCURSOR_SIZE 24

@@ -44,6 +44,7 @@ PACMAN_PACKAGES=(
     wl-clipboard
     xarchiver
     xdg-desktop-portal-gtk
+    xdg-desktop-portal-wlr
     zig
     zoxide
 )

@@ -132,8 +132,12 @@ tooltip * {
 #clock {
 	background-color: transparent;
 	color: rgba(255, 255, 255, 1);
-	padding: 0px 8px 0px 8px;
+	padding: 0px 8px 0px 0px;
 	margin: 0px 0px 0px 5px;
+}
+
+#power-profiles-daemon {
+	color: rgba(255, 255, 255, 1);
 }
 
 #workspaces button:hover {
