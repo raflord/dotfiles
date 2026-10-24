@@ -9,6 +9,7 @@ readonly DOTFILES_DIR="${DOTFILES_DIR:-$HOME/dotfiles}"
 PACMAN_PACKAGES=(
     7zip
     adw-gtk-theme
+    discord
     fd
     firefox
     fuse2

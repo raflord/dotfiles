@@ -45,8 +45,7 @@
 	"custom/logo": {
 		"format": "",
 		"tooltip": true,
-		"tooltip-format": "Power Options",
-		"on-click": "wlogout"
+		"tooltip-format": "Power Options"
 	},
 
 	"custom/power": {
@@ -105,7 +104,7 @@
 	},
 
 	"pulseaudio#source": {
-		"format": "{icon}  {volume}%",
+		"format": "{icon}   {volume}%",
 		"format-muted": "󰝟",
 		"format-icons": {
 			"headphone": "",

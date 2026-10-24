@@ -11,7 +11,7 @@ set $menu wofi --show drun
 # MONITORS
 # ============================================================
 
-output DP-1 mode 2560x1440@200Hz pos 0 0 scale 1
+output DP-1 mode 2560x1440@170Hz pos 0 0 scale 1
 output HDMI-A-1 mode 1920x1080@60Hz pos 2560 0 scale 1
 
 # ============================================================
