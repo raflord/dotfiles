@@ -5,6 +5,12 @@ set -euo pipefail
 APPIMAGE="./OpenRGB.AppImage"
 RULES="/etc/udev/rules.d/60-openrgb.rules"
 
+echo "Downloading OpenRGB..."
+
+curl https://codeberg.org/OpenRGB/OpenRGB/releases/download/release_1.1/OpenRGB_1.1_x86_64_8e16de2.AppImage --output $APPIMAGE
+
+chmod +x OpenRGB.AppImage
+
 if [[ ! -f "$APPIMAGE" ]]; then
     echo "Error: $APPIMAGE not found."
     exit 1
