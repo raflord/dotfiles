@@ -40,6 +40,8 @@ PACMAN_PACKAGES=(
     ttf-jetbrains-mono
     ttf-jetbrains-mono-nerd
     unzip
+    vlc
+    vlc-plugins-all
     waybar
     wiremix
     wl-clipboard
