@@ -20,7 +20,6 @@ PACMAN_PACKAGES=(
     gnome-disk-utility
     go
     hypridle
-    hyprlock
     hyprpaper
     hyprshot
     make
