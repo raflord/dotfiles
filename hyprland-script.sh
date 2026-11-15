@@ -294,6 +294,10 @@ install_font() {
     sudo rm /usr/local/share/fonts/Metropolis/SIL\ Open\ Font\ License.txt
 }
 
+setup_ly_config() {
+    sudo cp ./ly/config.ini /etc/ly/config.ini
+}
+
 main() {
     require_command pacman
     require_command sudo
@@ -309,6 +313,7 @@ main() {
     remove_unwanted_packages
 
     install_font
+    setup_ly_config
 
     log "Setup completed."
     log "Open a new shell to load uv, pnpm, and Oh My Zsh."
