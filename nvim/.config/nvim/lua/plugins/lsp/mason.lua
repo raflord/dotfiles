@@ -43,6 +43,7 @@ return {
 				"ty",
 				"taplo",
 				"yamlls",
+				"zls",
 			},
 		})
 		-- formatters

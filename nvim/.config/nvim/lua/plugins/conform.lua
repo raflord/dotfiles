@@ -19,6 +19,7 @@ return {
 				typescriptreact = { "biome-check" },
 				xml = { "xmlformatter" },
 				yaml = { "yamlfmt" },
+				zig = { "zigfmt" },
 			},
 			format_on_save = {
 				-- These options will be passed to conform.format()

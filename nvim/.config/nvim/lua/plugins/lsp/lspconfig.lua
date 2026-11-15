@@ -135,6 +135,7 @@ return {
 			"tsc",
 			"ty",
 			"yamlls",
+			"zls",
 		})
 	end,
 }
