@@ -8,6 +8,7 @@ return {
 				compile = true,
 				background = { dark = "zen", light = "pearl" },
 				foreground = "saturated",
+				transparent = true,
 			})
 			vim.cmd.colorscheme("kanso")
 		end,
