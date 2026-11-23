@@ -32,3 +32,11 @@ sudo udevadm control --reload-rules
 sudo udevadm trigger
 
 echo "Done: $RULES"
+
+sudo mkdir -p /opt/openrgb/
+sudo mv "$APPIMAGE" /opt/openrgb/
+
+sudo mkdir -p ~/.local/share/applications/
+sudo cp ./openrgb.desktop ~/.local/share/applications/openrgb.desktop
+
+echo "Done installing OpenRGB"

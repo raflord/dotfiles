@@ -1,0 +1,5 @@
+[Desktop Entry]
+Name=OpenRGB
+Exec=/opt/openrgb/OpenRGB.AppImage
+Type=Application
+Categories=Utility;
