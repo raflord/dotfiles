@@ -1,6 +1,6 @@
 font-size = 17
 
-font-family = JetBrainsMono Nerd Font
+font-family = Lilex Nerd Font
 font-style = Regular
 
 theme = cyberdream
@@ -11,9 +11,14 @@ window-padding-balance = true
 
 mouse-hide-while-typing = true
 window-save-state = always
-gtk-tabs-location = hidden
+gtk-tabs-location = top
+window-show-tab-bar = auto
+gtk-wide-tabs = false
+gtk-custom-css = ~/.config/ghostty/themes/tabs.css
 
 keybind = unconsumed:ctrl+space>r=reload_config
+
+keybind = ctrl+space>o=toggle_tab_overview
 
 keybind = ctrl+arrow_up=scroll_page_up
 keybind = ctrl+arrow_down=scroll_page_down
