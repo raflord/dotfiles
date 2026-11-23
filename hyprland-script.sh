@@ -40,6 +40,7 @@ PACMAN_PACKAGES=(
     tree-sitter-cli
     ttf-jetbrains-mono
     ttf-jetbrains-mono-nerd
+    ttf-lilex-nerd
     unzip
     vlc
     vlc-plugins-all
