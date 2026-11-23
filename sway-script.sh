@@ -46,6 +46,7 @@ PACMAN_PACKAGES=(
     waybar
     wiremix
     wl-clipboard
+    wofi
     xarchiver
     xdg-desktop-portal-gtk
     xdg-desktop-portal-wlr
@@ -59,6 +60,7 @@ REMOVE_PACKAGES=(
     kitty
     nano
     pavucontrol
+    swaylock
     wmenu
 )
 
