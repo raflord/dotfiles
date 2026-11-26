@@ -19,10 +19,11 @@ output HDMI-A-1 mode 1920x1080@60Hz pos 2560 0 scale 1
 # ============================================================
 
 # Desktop utilities
+workspace number 1
 exec waybar
 exec swaync
 exec swayidle -w -C ~/.config/swayidle/config
-exec swaybg -i ~/.config/backgrounds/dark-desert.jpg -m fill
+exec swaybg -i ~/.config/backgrounds/abstract.jpg -m fill
 exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
 
 # Environment variables
